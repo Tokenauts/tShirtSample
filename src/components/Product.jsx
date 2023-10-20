@@ -44,7 +44,7 @@ const Product = () => {
     };
     try {
       const response = await fetch(
-        `https://front-git-feature-cors-way2pay.vercel.app/api/transaction`,
+        `https://front-git-test-way2pay.vercel.app/api/transaction`,
         {
           method: "POST",
           headers: {

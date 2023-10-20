@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/api/(.*)",
-        "destination": "https://front-git-test-way2pay.vercel.app/api"
+        "destination": "/https://front-git-test-way2pay.vercel.app"
       }
     ]
   }

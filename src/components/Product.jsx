@@ -44,7 +44,7 @@ const Product = () => {
     };
     try {
       const response = await fetch(
-        `http://localhost:5173/api/transaction`,
+        `/api/transaction`,
         {
           method: "POST",
           headers: {

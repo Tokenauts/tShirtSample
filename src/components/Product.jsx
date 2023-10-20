@@ -44,10 +44,11 @@ const Product = () => {
     };
     try {
       const response = await fetch(
-        `https://front-git-test-way2pay.vercel.app/api/transaction`,
+        `/api/transaction`,
         {
           method: "POST",
           headers: {
+            'Access-Control-Allow-Origin':'*',
             "Content-Type": "application/json",
           },
           body: JSON.stringify(data),

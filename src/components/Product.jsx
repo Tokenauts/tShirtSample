@@ -44,11 +44,11 @@ const Product = () => {
     };
     try {
       const response = await fetch(
-        `/api/transaction`,
+        `http://localhost:5173/api/transaction`,
         {
           method: "POST",
           headers: {
-            'Access-Control-Allow-Origin':'*',
+          
             "Content-Type": "application/json",
           },
           body: JSON.stringify(data),

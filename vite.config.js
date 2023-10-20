@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://front-git-test-way2pay.vercel.app/api',
+        target: 'https://front-git-test-way2pay.vercel.app',
         changeOrigin: true,
         secure: false,
       }

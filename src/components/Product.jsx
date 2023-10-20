@@ -5,7 +5,7 @@ const Product = () => {
   // Hardcoded product details
   const [selectedSize, setSelectedSize] = useState(null);
   const [showOverlay, setShowOverlay] = useState(false); // State to control the overlay
-
+  const [txId,setTxId]=useState("")
   const product = {
     name: "Nothing Great",
     description: "This is a Cotton Tshirt with Front Print",
@@ -62,7 +62,8 @@ const Product = () => {
       const dataa = await response.json();
       console.log(dataa);
 
-      if (data) {
+      if (dataa) {
+        setTxId(dataa.id)
         setShowOverlay(true);
       }
     } catch (error) {
@@ -74,13 +75,13 @@ const Product = () => {
     <div className="w-full h-full bg-slate-900">
       {showOverlay && (
         <div className="fixed top-0 left-0 w-full h-full z-50 bg-opacity-75 bg-black flex justify-center items-center">
-          <iframe
-            src="https://front-git-test-way2pay.vercel.app/redirect/"
+          {txId&&(<iframe
+            src={"https://front-git-test-way2pay.vercel.app/redirect/"+txId}
             title="External Page"
             width="80%"
             height="80%"
             frameBorder="0"
-          ></iframe>
+          ></iframe>)}
           <button
             className="absolute top-5 right-5 bg-red-600 text-white p-2 rounded"
             onClick={() => setShowOverlay(false)}
